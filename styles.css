@@ -1,0 +1,143 @@
+:root{
+  font-size: 62.5%;
+  font-family: "Poppins";
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --dark-blue: hsl(234, 12%, 34%);
+  --gray-blue: hsl(229, 6%, 66%);
+  --light-gray: hsl(0, 0%, 98%);
+  /*weights 200 400 600 */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--light-gray);
+  text-align: center;
+}
+.header {
+  padding: 2rem 2rem;
+}
+.header .title {
+  font-size: 2.0rem;
+  color: var(--dark-blue);
+  font-weight: 200;
+  margin-bottom: 2rem;
+}
+.header .subtitle{
+  font-weight: 600;
+}
+.header p {
+  color: var(--gray-blue);
+  font-size: 1.3rem;
+}
+
+.four-cards{
+  display: grid;
+  grid-template-rows: repeat(4, 25%);
+  gap: 39px;
+  width: 100%;
+  max-width: 315px;
+  height: 69rem;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+  text-align: center;
+}
+.card {
+  /* display: flex; */
+  flex-flow: row wrap;
+  border-radius: 10px;
+  text-align: left;
+  height: 18rem;
+  position: relative;
+  padding: 3rem;
+  box-shadow: 1px 2px 15px 0px var(--gray-blue);
+}
+.card picture{
+  /* align-self: flex-end; */
+  /* justify-self: end; */
+  bottom: 0.5rem;
+  right: 3rem;
+  position: absolute;
+  display: block;
+  width: 53px;
+  height: 76px;
+}
+
+/* All cards top ribbon decoration */
+.supervisor::before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 97.5%;
+  transform: translateY(0px);
+  border: 3px solid var(--gray-blue);
+  border-radius: 10px 10px 0 0;
+}
+.team::before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 97.5%;
+  transform: translateY(0px);
+  border: 3px solid var(--red);
+  border-radius: 10px 10px 0 0;
+}
+.karma::before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 97.5%;
+  transform: translateY(0px);
+  border: 3px solid var(--orange);
+  border-radius: 10px 10px 0 0;
+}
+.calculator::before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 97.5%;
+  transform: translateY(0px);
+  border: 3px solid var(--blue);
+  border-radius: 10px 10px 0 0;
+}
+
+@media (min-width: 1024px) {
+  .four-cards { /*father needs to be body*/
+    width: 80%;
+    max-width: 1110px;
+    height: 60%;
+    max-height: 530px;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: repeat(4, 25%);
+    gap: 12px;
+  }
+  .supervisor{
+    grid-row: 2 / span 3;
+    grid-column: 1;
+  }
+  .team{
+    grid-row: 1 / span 2;
+    grid-column: 2;
+  }
+  .karma{
+    grid-row: 3 / span 4;
+    grid-column: 2;
+  }
+  .calculator{
+    grid-row: 2 / span 3;
+    grid-column: 3;
+  }
+}
